@@ -1,11 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anna Rufino | Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Anna <span>Rufino</span></a>
+            <nav class="nav-links">
+                <a href="#">Início</a>
+                <a href="#posts">Artigos</a>
+                <a href="#about">Sobre</a>
+                <button id="theme-toggle" aria-label="Alternar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Blog de Anna Rufino</h1>
+            <p>Escrevendo sobre tecnologia, design, rotina de estudos e desenvolvimento pessoal.</p>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Pesquisar no blog...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content" id="posts">
+        <h2>Publicações Recentes</h2>
+        <div class="posts-grid" id="posts-container">
+            <!-- Posts gerados via JS -->
+        </div>
+    </main>
+
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Anna Rufino</h2>
+            <p>Seja bem-vindo(a) ao meu espaço digital! Aqui compartilho aprendizados, projetos e reflexões sobre tecnologia e criação de conteúdo.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anna Rufino. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
