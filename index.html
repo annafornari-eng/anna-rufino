@@ -1,65 +1,147 @@
-<!<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna Rufino | Blog</title>
+    <title>Anna Rufino — Blog & Journal</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Anna <span>Rufino</span></a>
-            <nav class="nav-links">
-                <a href="#">Início</a>
-                <a href="#posts">Artigos</a>
-                <a href="#about">Sobre</a>
-                <button id="theme-toggle" aria-label="Alternar tema">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="brand">
+                <span class="brand-name">Anna Rufino</span>
+                <span class="brand-badge">Journal</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#posts" class="nav-link">Artigos</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#newsletter" class="nav-link">Newsletter</a>
             </nav>
+
+            <div class="nav-actions">
+                <button id="theme-btn" class="icon-btn" aria-label="Mudar tema">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Blog de Anna Rufino</h1>
-            <p>Escrevendo sobre tecnologia, design, rotina de estudos e desenvolvimento pessoal.</p>
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Pesquisar no blog...">
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <span class="hero-tag">✨ Seja bem-vindo(a) ao meu espaço</span>
+                <h1>Pensamentos sobre <i>tecnologia</i>, design & vida moderna.</h1>
+                <p>Aqui compartilho experiências, aprendizados de desenvolvimento front-end e reflexões sobre a jornada profissional e pessoal.</p>
+                
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Buscar por palavra-chave ou tema...">
+                </div>
+            </div>
+
+            <!-- Card Destaque / Profile Card -->
+            <div class="author-card">
+                <div class="author-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Anna Rufino">
+                </div>
+                <h3>Anna Rufino</h3>
+                <p class="author-bio">Desenvolvedora Front-end & Criadora de Conteúdo. Apaixonada por interfaces bonitas e código limpo.</p>
+                <div class="author-stats">
+                    <div><strong>12+</strong> <span>Artigos</span></div>
+                    <div><strong>5k+</strong> <span>Leitores</span></div>
+                    <div><strong>3+</strong> <span>Anos Dev</span></div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <main class="container main-content" id="posts">
-        <h2>Publicações Recentes</h2>
-        <div class="posts-grid" id="posts-container">
-            <!-- Posts gerados via JS -->
+    <!-- Área Principal de Conteúdo -->
+    <main class="container main-layout" id="posts">
+        
+        <!-- Categorias e Filtros -->
+        <div class="filter-bar">
+            <div class="categories" id="category-filters">
+                <button class="cat-btn active" data-category="todos">Todos</button>
+                <button class="cat-btn" data-category="Tecnologia">Tecnologia</button>
+                <button class="cat-btn" data-category="Design">Design</button>
+                <button class="cat-btn" data-category="Carreira">Carreira</button>
+                <button class="cat-btn" data-category="Estilo de Vida">Estilo de Vida</button>
+            </div>
         </div>
+
+        <!-- Grid de Posts -->
+        <section class="posts-grid" id="posts-container">
+            <!-- Os cards dos posts serão carregados aqui pelo JS -->
+        </section>
+
     </main>
 
-    <div id="post-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <section class="about" id="about">
-        <div class="container">
-            <h2>Sobre Anna Rufino</h2>
-            <p>Seja bem-vindo(a) ao meu espaço digital! Aqui compartilho aprendizados, projetos e reflexões sobre tecnologia e criação de conteúdo.</p>
+    <!-- Seção Sobre -->
+    <section class="about-section" id="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>Sobre mim</h2>
+                <p>Olá! Meu nome é Anna Rufino. Sou apaixonada por tecnologia e por transformar ideias em experiências digitais incríveis.</p>
+                <p>Criei este blog para funcionar como meu diário público e biblioteca de conhecimento. Aqui você encontrará artigos práticos sobre desenvolvimento web, boas práticas, design de interfaces e dicas para quem está construindo uma carreira no mundo digital.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Newsletter -->
+    <section class="newsletter-section" id="newsletter">
         <div class="container">
-            <p>&copy; 2026 Anna Rufino. Todos os direitos reservados.</p>
+            <div class="newsletter-card">
+                <h2>Fique por dentro das novidades 📩</h2>
+                <p>Receba meus últimos artigos e conteúdos exclusivos diretamente na sua caixa de entrada. Sem spam, prometo!</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail..." required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+                <span id="newsletter-msg" class="newsletter-msg"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="brand">Anna <span>Rufino</span></a>
+                <p>Criando e compartilhando conteúdo com amor.</p>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Anna Rufino. Desenvolvido com HTML, CSS e JS.
+            </div>
         </div>
     </footer>
+
+    <!-- Modal de Leitura do Post -->
+    <div id="post-modal" class="modal-backdrop">
+        <div class="modal-window">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div id="modal-content-area"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
