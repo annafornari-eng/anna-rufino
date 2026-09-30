@@ -4,351 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Rufino | Blog</title>
-    
-    <!-- Fontes Elegantes e Modernas -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
-        /* Variáveis da Paleta Roxa Editorial */
+        /* Variáveis de Cores (Tons de Roxo) */
         :root {
-            --roxo-profundo: #160D26;
-            --roxo-escuro: #2A1B4E;
-            --roxo-vibrante: #6D44C5;
-            --roxo-medio: #8B63E6;
-            --lavanda: #E8E1F7;
-            --fundo-claro: #F9F8FC;
-            --branco: #FFFFFF;
-            --texto-principal: #231C30;
-            --texto-suave: #625975;
-            
-            --fonte-titulo: 'Cinzel', serif;
-            --fonte-corpo: 'Plus Jakarta Sans', sans-serif;
-            --transicao: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --purple-dark: #2e1065;
+            --purple-main: #6b21a8;
+            --purple-light: #a855f7;
+            --purple-bg: #faf5ff;
+            --text-dark: #1e1b4b;
+            --text-light: #ffffff;
+            --gray: #64748b;
         }
 
-        /* Reset Global */
+        /* Configurações Gerais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: var(--fonte-corpo);
-            background-color: var(--fundo-claro);
-            color: var(--texto-principal);
-            line-height: 1.7;
-            overflow-x: hidden;
+            background-color: var(--purple-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transicao);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navbar Sofisticada */
+        /* Cabeçalho */
         header {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 99, 230, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-family: var(--fonte-titulo);
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--roxo-escuro);
-        }
-
-        .logo span {
-            color: var(--roxo-vibrante);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-
-        nav ul a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--texto-suave);
-            letter-spacing: 0.5px;
-        }
-
-        nav ul a:hover, nav ul a.active {
-            color: var(--roxo-vibrante);
-        }
-
-        /* Seção Hero / Banner de Apresentação */
-        .hero-section {
-            background: linear-gradient(145deg, var(--roxo-profundo) 0%, var(--roxo-escuro) 100%);
-            color: var(--branco);
-            padding: 100px 0 120px 0;
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple-main));
+            color: var(--text-light);
+            padding: 2rem 1rem;
             text-align: center;
-            position: relative;
-            border-radius: 0 0 60px 60px;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 40px rgba(22, 13, 38, 0.15);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(139, 99, 230, 0.25) 0%, transparent 50%);
-            pointer-events: none;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
-        .hero-content {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .hero-tag {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--roxo-medio);
-            margin-bottom: 16px;
-            display: inline-block;
-            font-weight: 600;
-        }
-
-        .hero-section h1 {
-            font-family: var(--fonte-titulo);
-            font-size: 3.2rem;
-            font-weight: 500;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-        }
-
-        .hero-section p {
-            font-size: 1.15rem;
-            color: var(--lavanda);
-            font-weight: 300;
+        header p {
+            font-size: 1.1rem;
             opacity: 0.9;
         }
 
-        /* Layout em Grid (Artigos + Lateral) */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 2.2fr 1fr;
-            gap: 48px;
-            margin-bottom: 80px;
+        /* Container Principal */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* Feed de Posts */
-        .blog-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
+        /* Estilo dos Posts */
+        .post {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(107, 33, 168, 0.05), 0 2px 4px -1px rgba(107, 33, 168, 0.05);
+            border-left: 5px solid var(--purple-main);
         }
 
-        /* Post Card Estilo Editorial */
-        .card-post {
-            background: var(--branco);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(42, 27, 78, 0.02);
-            border: 1px solid rgba(139, 99, 230, 0.05);
-            display: flex;
-            flex-direction: column;
-            transition: var(--transicao);
-        }
-
-        .card-post:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(42, 27, 78, 0.08);
-            border-color: rgba(139, 99, 230, 0.15);
-        }
-
-        /* Imagem Provisória Elegante */
-        .post-cover {
-            height: 280px;
-            background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo-medio));
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .post-cover::after {
-            content: '✦';
-            font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .post-body {
-            padding: 32px;
-        }
-
-        .post-category {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--roxo-vibrante);
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .post-title {
-            font-family: var(--fonte-titulo);
-            font-size: 1.6rem;
-            color: var(--roxo-profundo);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .post-title:hover {
-            color: var(--roxo-vibrante);
-        }
-
-        .post-text {
-            color: var(--texto-suave);
-            font-size: 1rem;
-            margin-bottom: 24px;
-        }
-
-        .post-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(139, 99, 230, 0.08);
+        .post-meta {
             font-size: 0.85rem;
-            color: var(--texto-suave);
+            color: var(--gray);
+            margin-bottom: 0.5rem;
         }
 
-        /* Barra Lateral (Sidebar) */
-        .sidebar {
+        .post h2 {
+            color: var(--purple-dark);
+            margin-bottom: 1rem;
+        }
+
+        .post p {
+            margin-bottom: 1.5rem;
+            color: #334155;
+        }
+
+        /* Botão de Curtir */
+        .like-section {
             display: flex;
-            flex-direction: column;
-            gap: 40px;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .sidebar-widget {
-            background: var(--branco);
-            padding: 32px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(42, 27, 78, 0.02);
-            border: 1px solid rgba(139, 99, 230, 0.05);
-        }
-
-        .widget-title {
-            font-family: var(--fonte-titulo);
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            color: var(--roxo-profundo);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .widget-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 35px; height: 2px;
-            background-color: var(--roxo-vibrante);
-        }
-
-        /* Widget Perfil */
-        .profile-box {
-            text-align: center;
-        }
-
-        .profile-avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--roxo-medio), var(--roxo-profundo));
-            margin: 0 auto 20px auto;
-            border: 4px solid var(--lavanda);
-        }
-
-        .profile-box p {
-            color: var(--texto-suave);
-            font-size: 0.95rem;
-        }
-
-        /* Widget Newsletter Form */
-        .newsletter-input {
-            width: 100%;
-            padding: 14px 16px;
-            background-color: var(--fundo-claro);
-            border: 1px solid rgba(139, 99, 230, 0.15);
-            border-radius: 12px;
-            font-family: var(--fonte-corpo);
-            font-size: 0.95rem;
-            color: var(--texto-principal);
-            outline: none;
-            margin-bottom: 12px;
-            transition: var(--transicao);
-        }
-
-        .newsletter-input:focus {
-            border-color: var(--roxo-vibrante);
-            background-color: var(--branco);
-            box-shadow: 0 0 0 4px rgba(109, 68, 197, 0.1);
-        }
-
-        .newsletter-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--roxo-vibrante);
-            color: var(--branco);
-            border: none;
-            border-radius: 12px;
-            font-family: var(--fonte-corpo);
-            font-weight: 600;
-            font-size: 0.95rem;
+        .like-btn {
+            background-color: var(--purple-bg);
+            border: 2px solid var(--purple-light);
+            color: var(--purple-main);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             cursor: pointer;
-            transition: var(--transicao);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.2s ease;
         }
 
-        .newsletter-btn:hover {
-            background-color: var(--roxo-escuro);
-            transform: translateY(-2px);
+        .like-btn:hover {
+            background-color: var(--purple-main);
+            color: var(--text-light);
+            border-color: var(--purple-main);
         }
 
-        /* Rodapé Minimalista */
+        .like-btn.liked {
+            background-color: var(--purple-main);
+            color: var(--text-light);
+            border-color: var(--purple-main);
+        }
+
+        /* Rodapé */
         footer {
-            background-color: var(--roxo-profundo);
-            color: var(--lavanda);
-            padding: 40px 0;
             text-align: center;
+            padding: 2rem;
+            color: var(--gray);
             font-size: 0.9rem;
-            border-top: 4px solid var(--roxo-vibrante);
+            margin-top: 4rem;
+            border-top: 1px solid #e2e8f0;
         }
+    </style>
+</head>
+<body>
 
-        footer strong {
-            color: var(--branco);
-            font-family: var(--fonte-titulo);
-            letter-spacing: 1px;
+    <!-- Cabeçalho do Blog -->
+    <header>
+        <h1>Anna Rufino</h1>
+        <p>Bem-vindo ao meu espaço de ideias, tecnologia e cotidiano.</p>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+
+        <!-- Post 1 -->
+        <article class="post">
+            <div class="post-meta">Postado em 30 de Setembro, 2026 por Anna</div>
+            <h2>Explorando Novas Tecnologias em 2026</h2>
+            <p>O mundo do desenvolvimento web não para de mudar. Hoje compartilho com vocês as minhas ferramentas favoritas que prometem revolucionar a forma como criamos interfaces digitais focadas na experiência do usuário.</p>
+            <div class="like-section">
+                <button class="like-btn" onclick="toggleLike(this, 'count1')">
+                    💜 Curtir
+                </button>
+                <span class="like-count" id="count1">24</span> curtidas
+            </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post">
+            <div class="post-meta">Postado em 25 de Setembro, 2026 por Anna</div>
+            <h2>A Importância da Identidade Visual</h2>
+            <p>Escolher as cores certas para o seu projeto diz muito sobre o que você deseja transmitir. O roxo, por exemplo, é historicamente ligado à criatividade, sabedoria e inovação, sendo perfeito para blogs pessoais e portfólios únicos.</p>
+            <div class="like-section">
+                <button class="like-btn" onclick="toggleLike(this, 'count2')">
+                    💜 Curtir
+                </button>
+                <span class="like-count" id="count2">42</span> curtidas
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Anna Rufino. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Lógica das Curtidas (JavaScript) -->
+    <script>
+        function toggleLike(button, countId) {
+            const countElement = document.getElementById(countId);
+            let currentLikes = parseInt(countElement.innerText);
+
+            if (button.classList.contains('liked')) {
+                // Descurtir
+                button.classList.remove('liked');
+                countElement.innerText = currentLikes - 1;
+            } else {
+                // Curtir
+                button.classList.add('liked');
+                countElement.innerText = currentLikes + 1;
+            }
         }
+    </script>
 
+</body>
+</html>
+
+          
